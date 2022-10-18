@@ -1,9 +1,9 @@
+import { Counter } from "./Counter";
+
 function App() {
   return (
     <div className="App">
-      <p>
-        Change branch <code>feature/any</code> and reload.
-      </p>
+      <Counter />
     </div>
   );
 }
