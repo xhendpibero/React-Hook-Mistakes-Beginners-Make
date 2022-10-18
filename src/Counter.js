@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Counter() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log(count)
+  }, [count])
 
   const adjustCount = (amount) => {
     setCount((currentCount) => {
