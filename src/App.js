@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from "react";
 
 function App() {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log({
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Change branch <code>feature/</code> and reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Form Login
+      <form onSubmit={onSubmit}>
+        <label>Username</label>
+        <br />
+        <input ref={emailRef} type="email"></input>
+        <br />
+        <label>Password</label>
+        <br />
+        <input ref={passwordRef} type="password"></input>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
